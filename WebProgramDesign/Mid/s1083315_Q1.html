@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Table</title>
+      <style>
+	  body
+	  {
+		font-size:16pt;
+	  }	  
+        table
+        {
+           width: 60%;
+           margin-left: 20%;
+		   margin-top: 50px;
+		   border:1px solid black;
+		   border-collapse: collapse; 
+        }
+		#title
+		{
+			color:red;
+			text-align:center;
+		}
+		tr td
+		{
+			border:1px solid black;
+		}
+		</style>
+  </head>
+  <body>
+    <h1 align="center">校園停車證申請表格</h1>
+	<form method = "post" action = "123.php">	
+		<table>
+			<tr>
+				<td >姓名</td>
+				<td><input type="text" maxlength="5" minlength="2"required/></td>
+				<td >學號</td>
+				<td><input type="text" placeholder="sXXXXXXX" pattern="[s]\d{7}" required/></td>
+			</tr>
+			<tr>
+				<td>手機</td>
+				<td><input type="text" placeholder="09XX-XXX-XXX" pattern="\d{4}-\d{3}-\d{3}" required/></td>
+				<td>校內分機</td>
+				<td><input type="text" pattern="\d{4}" required/></td>
+			</tr>
+			<tr>
+				<td >校內EMAIL</td>
+				<td colspan=3><input type="email" placeholder="sXXXXXXX@mail.yzu.edu.tw" pattern="[s]\d{7}@mail.yzu.edu.tw" required/></td>
+			</tr>
+			<tr>
+				<td >備用EMAIl</td>
+				<td colspan=3><input type="email" size=40 required/></td>
+			</tr>
+			<tr>
+				<td>車牌號碼</td>
+				<td><input type="text" pattern="\d{3}-\w{3}" required/></td>
+				<td>汽機車廠牌</td>
+				<td><input type="text" pattern="[A~Z][a~z]" required/></td>
+			</tr>
+			<tr>
+				<td colspan=6 style="text-align:center">	
+					<input type = "submit" value = "Submit">
+					<input type = "reset" value = "Clear">
+				</td>
+			</tr>
+		</table>
+	</form>
+  </body>
+</html>

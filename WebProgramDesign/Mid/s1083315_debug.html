@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Table</title>
+      <style>
+		  body
+		  {
+			font-size:16pt;
+		  }	  
+        table
+        {
+           width: 60%;
+           margin-left: 20%;
+		   margin-top: 50px;
+		   border:1px solid black;
+		   border-collapse: collapse; 
+        }
+		tr td
+		{
+			border:1px solid black;
+		}
+		.title
+		{
+			color:red;
+			text-align:center;
+		}
+		</style>
+  </head>
+  <body>
+	<form method = "post" action = "debug.php">	
+		<table>		
+			<tr>
+				<td class="title">Name:</td>
+				<td><input name = "name" type = "text" required/></td>
+				<td class="title">Gender:</td>
+				<td>
+					<input name = "sex1" type = "radio" value="Male">Male
+					<input name = "sex2" type = "radio" value="Female">Female
+				</td>
+			</tr>
+			<tr>
+				<td class="title">Birthday:</td>
+				<td> <input name = "birthday" type = "date" required/> </td>
+				<td class="title">Cellphone:</td>
+				<td><input name = "tel" type = "text"  placeholder="0987654321" pattern="\d{10}" required/></td>
+			</tr>
+			<tr>
+				<td class="title">Email:</td>
+				<td colspan=3><input name = "email" type = "email" size = 50 > </td>
+			</tr>
+			<tr>
+				<td class="title">Photo:</td>
+				<td colspan=3><input name = "url" type = "url" value="http://140.138.77.210/tinin/peopleicon.jpg" size=50> </td>
+			</tr>   			
+			<tr>
+				<td rowspan=3 class="title">Education:</td>
+				<td><input name = "e1" type = "text" required value="Yuan Ze">University</td>
+				<td>From:<input name = "e1s" type = "month" required/> </td>
+				<td>To:<input name = "e1e" type = "month" required/> </td>
+			</tr>
+			<tr>
+				<td><input name = "e2" type = "text" required>Senior High School</td>
+				<td>From:<input name = "e2s" type = "month" required/> </td>
+				<td>To:<input name = "e2e" type = "month" required/> </td>
+			</tr>			
+			<tr>
+				<td><input name = "e3" type = "text" required>Junior High School</td>
+				<td>From:<input name = "e3s" type = "month" required/> </td>
+				<td>To:<input name = "e3e" type = "month" required/> </td>
+			</tr>				
+			<tr>
+				<td colspan=4 style="text-align:center">	
+					<input type = "submit" value = "Submit">
+					<input type = "reset" value = "Clear">
+				</td>
+			</tr>
+		</table>
+	</form>
+  </body>
+</html>

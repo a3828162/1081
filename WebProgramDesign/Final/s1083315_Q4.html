@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Line Charts</title>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+        var data = google.visualization.arrayToDataTable([
+          ['Year', '人數'],
+          ['機械系',  444],
+          ['化材系',  464],
+          ['資工系',  627],
+		  ['工管系',  440],
+		  ['工程英專',  83],
+		  ['電通英專',  111],
+		  ['電機系甲組',  507],
+		  ['電機系乙組',  347],
+		  ['電機系丙組',  216],
+		  ['管理學院學士班',  1758],
+		  ['應外系',  225],
+		  ['中語系',  223],
+		  ['藝設系',  203],
+		  ['社政系',  226],
+		  ['人社英專',  100],
+		  ['資管系',  448],
+		  ['資傳系',  500],
+		  ['資訊英專',  78]
+        ]);
+        var options = {
+          title: '各系所人數',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      });
+	  
+	$(function(){
+        var data = google.visualization.arrayToDataTable([
+          ['Year', '人數'],
+          ['機械系',  444],
+          ['化材系',  464],
+          ['資工系',  627],
+		  ['工管系',  440],
+		  ['工程英專',  83],
+		  ['電通英專',  111],
+		  ['電機系甲組',  507],
+		  ['電機系乙組',  347],
+		  ['電機系丙組',  216],
+		  ['管理學院學士班',  1758],
+		  ['應外系',  225],
+		  ['中語系',  223],
+		  ['藝設系',  203],
+		  ['社政系',  226],
+		  ['人社英專',  100],
+		  ['資管系',  448],
+		  ['資傳系',  500],
+		  ['資訊英專',  78]
+        ]);
+        var options = {
+          title: '各系所人數',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('curve_chart2'));
+        chart.draw(data, options);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 1500px; height: 1000px"></div>
+	<div id="curve_chart2" style="width: 1500px; height: 1000px"></div>
+  </body>
+</html>

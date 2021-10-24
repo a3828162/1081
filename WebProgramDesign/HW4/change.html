@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>縮網址系統</title>
+		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>	
+		<script>
+			function progress() {
+			var sel = $("#lu").val();
+			$.ajax({
+			url: "index.php",
+			data: {
+			   lu: sel
+				},
+			type: "POST",
+			datatype: "html",
+				success: function( output ) {
+			   $( "#out" ).html(output);
+				},
+			error : function(){
+				alert( "Request failed." );
+			}
+			});
+		}
+		</script>
+	</head>
+	<body>
+		<h1 align = "center" >縮網址系統</h1>
+		<form  method = "post" action = "#">
+			<blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote><blockquote>
+			<p><label>請輸入網址<input id = "lu" type = "text" required /></label></p>
+			<p>
+				<input id = "submit" type ="button" value = "送出" onclick="progress()">
+			</p>
+			</blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote>
+		</form>	
+		<div id="out"></div>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debug</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>	
+    <script>
+    $(function(){
+	    var map = new google.maps.Map(document.getElementById('map'), {
+	    center: {lat: 24.9699054, lng:121.264305 };
+	    zoom: 14
+	    });
+    });
+     function progress() {
+        var id = $("#ID").val();
+        var iv = $("#IV").val();
+        $.ajax({
+			url: "debug.php",
+			data: {
+				ID: id;
+				IV: iv
+            },
+		type: "POST",
+		datatype: "html",
+		success: function( output ) {
+			var line = output.split("<br>");
+			var line_num = line.length;
+			for (var i = 0; i<line_num-1; i++)
+			{
+				var seq = line[i].split(",");
+				var icon = "http://www.pokedraw.net/img/"+seq[0]+".png";
+				var lng = seq[4];
+				var lat = seq[5];
+				var myCenter=new google.maps.LatLng(lat,lng);
+				var marker=new google.maps.Marker({
+					position:myCenter,
+					icon: {
+						url:icon;
+						scaledSize: new google.maps.Size(30, 30)
+					}
+			};
+			marker.setMap(map);
+			}
+        },
+		error : function(){
+			alert( "Request failed." );
+		}
+       });
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form method = "post" action = "#">
+        <p>POKEMON ID:<input name = "ID" type="text"></p>
+        <p>能力值下限:<input name = "IV" type="text"></p>
+        <p><input id = "submit" type="button" value = "查詢" onclick="progress()"></p>
+    </form>
+    <div id="map"></div>
+   </body>
+</html>

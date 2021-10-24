@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZeRXUn80EFE_PzJiH8ZPSxnRGtJ0Td6M"></script>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>	
+    <script>
+    $(function(){
+	var map = new google.maps.Map(document.getElementById('map'), {
+	    center: {lat: 25.033102, lng:121.563292 },
+	    zoom: 14
+	});
+	var myCenter=new google.maps.LatLng(25.033102,121.563292);
+	var marker=new google.maps.Marker({
+	    position:myCenter,
+	});
+	marker.setMap(map);
+	var infowindow = new google.maps.InfoWindow({
+	    content:"元智大學"
+	});
+	infowindow.open(map,marker);
+    });
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+   </body>
+</html>

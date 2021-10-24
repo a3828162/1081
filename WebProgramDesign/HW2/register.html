@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>四資迎新-監獄風雲</title>
+		<style >
+			em	{	font-weight: bold;
+					color: red;	}
+		</style>
+		<link rel = "stylesheet" type = "text/css" href = "hi.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+	</head>
+	<body>
+		<div class="jumbotron">
+
+			<h1 align = "center" >四資迎新-監獄風雲</h1>
+		</div>
+		<div style = "background-color:#FFD78C">
+			<p>
+				<h4><strong>營隊資訊</strong><br></h4>
+				<ul>
+					<li>活動宗旨 : 讓新生認識元智大學校園，提前適應大學生活</li>
+					<li>主辦單位 : 元智大學資工、資管、資英、資傳系學會</li>
+					<li>活動對象 : 元智大學資工、資管、資英、資傳系大一新生</li>
+					<li>活動時間 : 8/20~8/25</li>
+					<li>活動地點 : 元智大學</li>
+					<li>住宿地點 : 元智大學男一宿,女一宿</li>
+					<li>聯絡方式 :
+						<ul>
+							<li>總召 : 吳大軒 0912345678</li>
+							<li>副召 : 吳小軒 0978945612</li>
+						</ul>
+					</li>
+				</ul>
+			</p>
+		</div>
+		<div style = "background-color:#FFD78C">
+			<p>
+				<h4><strong>報名事項</strong><br></h4>
+				<ul>
+					<li>報名時間 : 7/15~7/31</li>
+					<li>報名費用 : 4000$ <em>* 7/20號前報名可享早鳥優惠 3600$</em></li>
+					<li>請至ATM繳費</li>
+				</ul>
+			</p>
+		</div>
+		<div style = "background-color:#FFD78C">
+			<p>
+				<h4><strong>注意事項</strong><br></h4>
+				<ol>
+					<li>請攜帶個人隨身藥物,健保卡</li>
+					<li>請攜帶換洗衣物</li>
+					<li>請勿穿著<em>紅色</em>衣物</li>
+				</ol>
+			</p>
+		</div>
+		<div style = "background-color:#FFD78C">
+			<p>
+				<h4><strong>四資迎新報名表</strong><br></h4>
+			</p>
+			<form method = "post" action = "s1083315_HW2.php">
+				<blockquote>
+				<p ><label>姓名: <input name = "name" type = "text" size = "12" required /></label></p>
+				<p >	
+					<strong>性別</strong><br>
+					<label>
+						<input name = "gender" type = "radio" value = "男" checked>男</label>
+					<label>
+						<input name = "gender" type = "radio" value = "女" >女</label>	
+				</p>
+				<p ><label>手機號碼: <input name = "tel" type = "tel" placeholder = "09xx-xxx-xxx"
+					pattern = "\d{4}-\d{3}-\d{3}" required />
+					</label>
+				</p>
+				<p ><label>學號: <input name = "stdnum" type = "text" placeholder = "sxxxxxxx"
+					maxlength="8" required />
+					</label>
+				</p>
+				<p >	<label>出生年月日<input name = "birth" type = date >
+					</label>
+				</p>
+				<p >	<label>身分證字號: <input name = "people" type = "text" pattern = "[A-Z]\d{9}" required />
+					</label>
+				</p>
+				<p ><label>Email: <input name = "mail" type = "email" placeholder = "xxxxx@xxxxx.com" required /></label></p>
+				<p >	
+					<strong>飲食習慣</strong><br>
+					<label>
+						<input name = "eat" type = "radio" value = "葷" checked>葷</label>
+					<label>
+						<input name = "eat" type = "radio" value = "素" >素</label>	
+				</p>
+				<p >
+					<label>其他: <br>
+						<textarea name = "other" rows = "4" cols = "36"></textarea>
+					</label>
+				</p>
+				<p >
+					<input type = "submit" value = "送出" />
+					<input type = "reset" value = "清除" />
+				</p>
+				</blockquote>
+			</form>
+		</div>
+		<script src="js/jquery-1.11.3.js"></script><!-- 載入 jQuery 套件 -->
+		<script src="js/bootstrap.js"></script>
+	</body>
+</html>
